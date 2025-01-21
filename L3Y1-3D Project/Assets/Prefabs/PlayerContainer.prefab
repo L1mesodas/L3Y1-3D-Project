@@ -353,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   forwardAccel: 8
   reverseAccel: 4
-  maxSpeed: 50
+  maxSpeed: 25
   turnStrength: 180
   jumpHeight: 60
   gravityForce: 10

@@ -47,6 +47,9 @@ public class GameManager : MonoBehaviour
     }
     void Collectables()
     {
+
+        collectablesText.text = currentCollectables + "/" + requiredCollectables;
+
         if (currentCollectables == requiredCollectables)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
