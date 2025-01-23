@@ -32,6 +32,12 @@ public class GameManager : MonoBehaviour
     {
         timerText.text = timer.ToString("F2");
         
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+
         if (timer <= 0)
         {
             
@@ -43,7 +49,8 @@ public class GameManager : MonoBehaviour
             timer -= Time.deltaTime;
         }
         
-        
+        Collectables();
+
     }
     void Collectables()
     {
