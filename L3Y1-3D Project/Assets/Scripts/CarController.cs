@@ -35,6 +35,11 @@ public class CarController : MonoBehaviour
     private float emissionRate;
     private GameObject particleHolder;
 
+    [Header("Audio")]
+    public AudioSource engineSound;
+    public AudioSource hornSound;
+
+
 
     void Start()
     {
@@ -79,6 +84,13 @@ public class CarController : MonoBehaviour
         leftFrontWheel.localRotation = Quaternion.Euler(leftFrontWheel.localRotation.eulerAngles.x, (turnInput * maxWheelTurn) - 180, leftFrontWheel.localRotation.eulerAngles.z);
         rightFrontWheel.localRotation = Quaternion.Euler(rightFrontWheel.localRotation.eulerAngles.x, turnInput * maxWheelTurn, rightFrontWheel.localRotation.eulerAngles.z);
         transform.position = theRB.transform.position;
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            hornSound.Play();
+        }
+        
+        engineSound.pitch = 1 + (speedInput / 10000);
     }
 
     private void FixedUpdate()
