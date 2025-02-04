@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -15,17 +15,22 @@ public class MainMenu : MonoBehaviour
         options.enabled = false;
     }
 
-    public void OnPlay()
-    {
-        
-    }
-    public void OnOptions()
-    {
-
-    }
-    public void OnExit()
-    {
-
-    }
-    public void OnPlay()
+  public void OnPlay()
+  {
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+  }
+  public void OnOptions()
+  {
+    main.enabled = false;
+    options.enabled = true;
+  }
+  public void OnExit()
+  {
+    Application.Quit(); 
+  }
+  public void OnBackToMain()
+  {
+    main.enabled = true;
+    options.enabled = false;
+  }
 }
